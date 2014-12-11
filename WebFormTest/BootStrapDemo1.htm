@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My First Bootstrap Page</title>
+    <!-- Bootstrap -->
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body
+        {
+            padding-top: 50px;
+        }
+        .navbar-header .log
+        {
+            padding: 5px 15px;
+        }
+        .navbar .head
+        {
+            width: 980px;
+            margin: 0 auto;
+        }
+        .carousel .picBox
+        {
+            height: 260px;
+        }
+        .carousel-inner > .item > img, .carousel-inner > .item > a > img
+        {
+            height: 260px;
+        }
+    </style>
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#test").click(
+                function () {
+                    $('#Modal1').modal({
+                        keyboard: true
+                    })
+                }
+            )
+        })
+       
+    </script>
+</head>
+<body>
+    <!--导航条开始-->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+       <div class="head">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand log" href="#"><img  alt="Brand" src="http://s.lietou-static.com/r/164123/p/beta2/images/logo.png" /></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">找职位</a></li>
+            <li><a href="#">找人脉</a></li>
+            <li><a href="#">行业名企</a></li>
+            <li><a href="#">创业新秀</a></li>
+            <li><a href="#">同道问答</a></li>
+          </ul>     
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">登陆</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">手机猎聘</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+       </div>
+    </nav>
+    <!--导航条结束-->
+    <!--幻灯片开始-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="picBox">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="http://img.lietou-static.com/web/file/415662" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://img.lietou-static.com/web/file/594589" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://img.lietou-static.com/web/file/592168" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://img.lietou-static.com/web/file/581713" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+        </div>
+    </div>
+    <!---幻灯片结束-->
+    <!--弹层开始-->
+    <div>
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title"
+            data-content="And here's some amazing content. It's very engaging. Right?">
+            Click to toggle popover</button>
+        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover"
+            data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            Popover on left
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover"
+            data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            Popover on top
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover"
+            data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+            Popover on bottom
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover"
+            data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            Popover on right
+        </button>
+    </div>
+    <!--弹层结束-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="aui_content" style="padding: 0px;">
+                    <style>
+                        #NTGUID__b
+                        {
+                            overflow: hidden;
+                        }
+                        #NTGUID__b input.input-xlarge
+                        {
+                            height: 30px;
+                            padding: 4px 8px;
+                            font-size: 16px;
+                            line-height: 30px;
+                        }
+                        #NTGUID__b .pop-box
+                        {
+                            background: #ececec;
+                            width: 720px;
+                        }
+                        /* 活动推广 - 与.pop-box同级#NTGUID__b .activities{      background:#ececec url('http://s.lietou-static.com/r/164123/p/beta2/images/event/yidao/pop_layer.jpg') right 0 no-repeat;    }    */#NTGUID__b .pop-box .pop-info
+                        {
+                            margin-left: 440px;
+                            width: 260px;
+                            _width: 250px;
+                            font-family: 'Microsoft Yahei';
+                            padding-left: 20px;
+                        }
+                        #NTGUID__b .pop-box .pop-info h3
+                        {
+                            margin: 0;
+                            font-size: 18px;
+                            font-weight: normal;
+                            padding: 70px 0 35px;
+                        }
+                        #NTGUID__b .pop-box .pop-info p
+                        {
+                            line-height: 36px;
+                        }
+                        #NTGUID__b .pop-box .pop-form
+                        {
+                            float: left;
+                            width: 320px;
+                            background: #fff;
+                            padding: 20px 60px;
+                        }
+                        #NTGUID__b .pop-box .pop-form h2.pop-title
+                        {
+                            font-size: 22px;
+                            font-family: 'Microsoft Yahei';
+                            font-weight: normal;
+                            line-height: normal;
+                            padding: 5px 0 15px;
+                            margin: 0;
+                            background: none;
+                            border: none;
+                        }
+                        #NTGUID__b .pop-form .form-title
+                        {
+                            height: 31px;
+                        }
+                        #NTGUID__b .pop-form .form-title span
+                        {
+                            cursor: pointer;
+                            font-family: "Simsan";
+                            height: 31px;
+                            float: left;
+                            text-align: center;
+                            width: 105px;
+                            background: #f1f1f1;
+                            font-size: 12px;
+                            line-height: 31px;
+                        }
+                        #NTGUID__b .pop-form .form-title span.spread
+                        {
+                            margin: 0 1px;
+                            border: none;
+                        }
+                        #NTGUID__b .pop-form .form-title span.active
+                        {
+                            background: #3d9ccc;
+                            color: #fff;
+                        }
+                        #NTGUID__b .pop-form .form-content
+                        {
+                            padding: 15px 0 5px;
+                        }
+                        #NTGUID__b .pop-form .form-content .control
+                        {
+                            margin-bottom: 10px;
+                        }
+                        #NTGUID__b .pop-form .form-content .control input.text
+                        {
+                            border: 1px #d9d9d9 solid;
+                            width: 302px;
+                            font-size: 12px;
+                            box-shadow: none;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn
+                        {
+                            color: #fff;
+                            font-size: 22px;
+                            font-weight: normal;
+                            font-family: "Microsoft YaHei";
+                            text-align: center;
+                            width: 320px;
+                            height: 40px;
+                            line-height: 40px;
+                            text-shadow: none;
+                            box-shadow: none;
+                            padding: 0;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-login
+                        {
+                            background: #ffaa00;
+                            border: 1px #faa700 solid;
+                            margin: 10px 0 15px;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-login:hover
+                        {
+                            background: #fa9200;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-register
+                        {
+                            background: #3d9ccc;
+                            border: 1px #3c98c7 solid;
+                            margin: 5px 0 10px;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-register:hover
+                        {
+                            background: #3689b3;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls
+                        {
+                            color: #bfbfbf;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls label
+                        {
+                            float: left;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls a
+                        {
+                            float: right;
+                            color: #0077b3;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls a.xieyi
+                        {
+                            float: left;
+                            color: #bfbfbf;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls a.xieyi:hover
+                        {
+                            float: left;
+                            color: #0077b3;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls a.forget
+                        {
+                            float: left;
+                            color: #7ab1cc;
+                            padding-left: 20px;
+                        }
+                        #NTGUID__b .pop-form .form-content .controls a:hover
+                        {
+                            text-decoration: underline;
+                        }
+                        #NTGUID__b .pop-form .form-content .connect-login
+                        {
+                            margin-top: 10px;
+                            padding-top: 10px;
+                            border-top: 1px #8c8c8c dotted;
+                            color: #BFBFBF;
+                        }
+                        #NTGUID__b .pop-form .form-content .connect-login a
+                        {
+                            margin-left: 5px;
+                            margin-right: 0;
+                            color: #bfbfbf;
+                        }
+                        #NTGUID__b .pop-form .registerBox .controls p
+                        {
+                            float: right;
+                        }
+                        #NTGUID__b .pop-form .registerBox .controls p a
+                        {
+                            float: none;
+                        }
+                        #NTGUID__b .pop-form .registerBox .control input.span2
+                        {
+                            width: 82px;
+                        }
+                        #NTGUID__b .pop-form .registerBox .control .validcode
+                        {
+                            margin: 0 10px;
+                            vertical-align: middle;
+                        }
+                        #NTGUID__b .pop-form .registerBox .control .changecode
+                        {
+                            color: #bfbfbf;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-phone-code
+                        {
+                            font-size: 14px;
+                            background: #3d9ccc;
+                            line-height: 38px;
+                            height: 38px;
+                            width: 208px;
+                            margin-left: 10px;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-phone-code:hover
+                        {
+                            background: #3689b3;
+                        }
+                        #NTGUID__b .pop-form .form-content .btn-phone-code.btn-disabled, #NTGUID__b .pop-form .form-content .btn-phone-code.btn-disabled:hover
+                        {
+                            color: #aaa;
+                            background: #e6e6e6;
+                        }
+                    </style>
+                    <div id="NTGUID__b" class="beta2">
+                        <div id="NTGUID__bNDTGUID__y">
+                            <div class="pop-box clearfix">
+                                <div class="pop-form">
+                                    <h2 class="pop-title">
+                                        欢迎登录猎聘网</h2>
+                                    <div class="form-title">
+                                        <span href="javascript:;" data-kind="0">求职者</span> <span href="javascript:;" class="spread"
+                                            data-kind="2">猎头顾问</span> <span href="javascript:;" data-kind="1" class="active">企业HR</span>
+                                    </div>
+                                    <div class="form-content">
+                                        <form class="loginBox" action="http://www.liepin.com/user/ajaxlogin/" method="post"
+                                        lt-plugins-valid="0.5642359412740916">
+                                        <input type="hidden" name="user_kind" value="1">
+                                        <input type="hidden" name="isMd5" value="1">
+                                        <input type="hidden" name="layer_from" value="wwwindex_top_cover_login_usere">
+                                        <div class="control relative">
+                                            <input type="text" name="user_login" value="" class="text input-xlarge" placeholder="用户名"
+                                                validate-rules="[['required','请输入$']]" validate-title="用户名">
+                                        </div>
+                                        <div class="control relative">
+                                            <input type="password" name="user_pwd" value="" class="text input-xlarge" placeholder="密码"
+                                                validate-rules="[['required','请输入$']]" validate-title="密码">
+                                        </div>
+                                        <input type="submit" value="HR登录" class="btn btn-login">
+                                        <div class="controls clearfix">
+                                            <label>
+                                                <input type="checkbox" name="chk_remember_pwd" value="on" checked="checked" autocomplete="off"
+                                                    style="display: none;"><i data-name="chk_remember_pwd" class="checkboxui checkboxui-checked"
+                                                        style="margin: 0px;"></i>&nbsp;下次自动登录</label>
+                                            <a href="http://www.liepin.com/passport/forgetPwd/?user_kind=1" class="forget" target="_blank">
+                                                忘记密码？</a> <a href="javascript:;" title="注册猎聘网" data-selector="switchRegister">立即注册</a>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="pop-info">
+                                    <h3>
+                                        中高端人才招聘第一平台</h3>
+                                    <p>
+                                        10,000,000+ 中高端人才库</p>
+                                    <p>
+                                        一对一专业顾问推荐匹配人选</p>
+                                    <p>
+                                        初级职位免费发布</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a data-toggle="modal" id="test">A demo modal </a>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        id="Modal1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <h2>
+                    我是弹窗</h2>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>
