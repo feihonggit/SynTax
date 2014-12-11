@@ -1,0 +1,5 @@
+F:\TestDemos\SyntaxDemos\WebFormTest\bin\WebFormTest.dll
+F:\TestDemos\SyntaxDemos\WebFormTest\bin\WebFormTest.pdb
+F:\TestDemos\SyntaxDemos\WebFormTest\obj\Debug\ResolveAssemblyReference.cache
+F:\TestDemos\SyntaxDemos\WebFormTest\obj\Debug\WebFormTest.dll
+F:\TestDemos\SyntaxDemos\WebFormTest\obj\Debug\WebFormTest.pdb

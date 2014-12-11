@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+//    "use strict"; //使用严格模式
+
+    //1、 删除对象的属性，  delete obj.propertyName
+    if (false) {
+            var obj = {
+                            bar: 1,
+                            foo: 2,
+                            baz: 3
+                      };
+            obj.bar = undefined;
+            obj.foo = null;
+            delete obj.baz;//删除对象的属性方法；
+ 
+            var obj = {
+                            'case': 'I am a keyword so I must be notated as a string',
+                            delete: 'I am a keyword too so me' // 出错：SyntaxError
+                      };
+
+      
+            for (var i in obj) {
+                if (obj.hasOwnProperty(i)) {
+                    console.log(i, '' + obj[i]);
+                }
+                }
+    }
+
+    //2、定义类并创建类的实例对象(js中的类就是js中的方法，换个角度考虑)   用var可以定义类的private属性，而用this能定义类的public属性。
+    if (false) {
+        function Shape()
+        {
+            var x = 1 ; // 私有属性
+            var y = 2 ;
+            this.z=4;   //公有属性
+            k=5;
+
+            var f1=function(){alert("我是Shape类的私有方法");}; //私有方法
+            Shape.f2=function(){alert("我是Shape类的共有方法")}; //公有方法
+            function SayHello(name){alert("hello"+name)}
+
+        } 
+        SayHello
+        var shape1=new Shape();
+        alert(shape1.x);
+        alert(shape1.z);
+        alert(shape1.k);
+        shape1.f1();
+        shape1.f2();
+        shape1.SayHello("李小飞");
+    }
+
+
+
+
+
+
+
+
+    // 3、js中方法的分类
+    if (false) {
+        function People(name) {
+            this.name = name;
+            //对象方法
+            this.Introduce = function () {
+                alert("My name is " + this.name);
+            }
+        }
+        //类方法
+        People.Run = function () {
+            alert("I can run");
+        }
+        //原型方法
+        People.prototype.IntroduceChinese = function () {
+            alert("我的名字是" + this.name);
+        }
+        //测试
+
+        var p1 = new People("Windking");
+
+        p1.Introduce();
+
+        People.Run();
+
+        p1.IntroduceChinese();
+    }
+
+
+    /* 4、原型小试：类B的原型指向A，则类A的prototype为B的一个实例，可以理解A将B中的方法和属性全部克隆了一遍。A能使用B的方法和属性。
+    这里强调的是克隆而不是继承。可以出现这种情况：A的prototype是B的实例，同时B的prototype也是A的实例。*/
+    if (false) {
+            function baseClass()
+        {
+          this.showMsg = function()
+          {
+             alert("baseClass::showMsg");   
+          }
+        }
+
+        function extendClass()
+        {
+            this.hello= function(){alert("子类");}
+        }
+
+        extendClass.prototype = new baseClass();
+        var instance = new extendClass();
+        instance.showMsg(); 
+        baseClass.prototype=new extendClass();
+        var base=new baseClass();
+        base.hello();
+
+    }
+
+    // 5、原型2和对象方法及类方法
+   if (false) {
+        function baseClass()
+        {
+            this.showMsg = function()
+            {
+                alert("baseClass::showMsg");   
+            }
+   
+            this.baseShowMsg = function()
+            {
+                alert("baseClass::baseShowMsg");
+            }
+        }
+        baseClass.showMsg = function()
+        {
+            alert("baseClass::showMsg static");
+        }
+
+        function extendClass()
+        {
+            this.showMsg =function ()
+            {
+                alert("extendClass::showMsg");
+            }
+        }
+        extendClass.showMsg = function()
+        {
+            alert("extendClass::showMsg static")
+        }
+
+        extendClass.prototype = new baseClass();
+        var instance = new extendClass();
+
+        instance.showMsg(); //显示extendClass::showMsg
+        instance.baseShowMsg(); //显示baseClass::baseShowMsg
+        instance.showMsg(); //显示extendClass::showMsg
+
+        baseClass.showMsg.call(instance);//显示baseClass::showMsg static
+
+        var baseinstance = new baseClass();
+        baseinstance.showMsg.call(instance);//显示baseClass::showMsg
+
+}
+
+    //6、原型之判断属性方法，hasOwnProperty
+    if (false) {
+            // 修改Object.prototype
+        Object.prototype.bar = 444; 
+        Object.prototype.ccc = 'cc1'; 
+        var foo = {goo: undefined};
+        foo.abc="abc";
+       // foo.prototype.bb="bb1";
+ 
+        console.log( foo.bar); // 1
+        console.log('bar' in foo); // true
+ 
+        console.log(foo.hasOwnProperty('bar')); // false
+        console.log(foo.hasOwnProperty('goo')); // true
+        console.log(foo.hasOwnProperty(foo.abc));//true
+        console.log(foo.bb);
+        console.log(foo.ccc);
+
+    }
+
+    //7、怎么判断变量是否为undefined和null
+    if (true) {
+            if (window.ii==undefined) {
+                        alert("i不为undefined");
+                    }    
+               }
+
+    </script>
+</head>
+
+<body>
+<div>
+<img src=未标题-3.png /> 
+</div>
+</body>
+</html>
