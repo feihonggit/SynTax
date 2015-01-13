@@ -1,0 +1,37 @@
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.txt
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.scc
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+*.tmp
+*.csproj.user
+[Oo]bj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.nuget/
+*Publish.xml
+Member.zizhuyou/Log/
